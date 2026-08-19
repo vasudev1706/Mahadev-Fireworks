@@ -1,0 +1,2547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MahaDev Fireworks | Premium Fireworks Store</title>
+
+    <style>
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, Arial, sans-serif;
+            background: #f7f7fb;
+            color: #171717;
+            padding-bottom: 90px;
+        }
+
+        button,
+        input,
+        textarea {
+            font-family: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            height: 72px;
+            padding: 0 5%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: rgba(12, 12, 18, 0.94);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: white;
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: linear-gradient(135deg, #ff7a18, #ff3d81);
+            box-shadow: 0 5px 18px rgba(255,80,90,0.35);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a {
+            color: #eeeeee;
+            text-decoration: none;
+
+            padding: 10px 15px;
+            border-radius: 10px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+
+            min-height: 500px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                radial-gradient(circle at 15% 25%, rgba(255,100,40,0.25), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(255,30,100,0.22), transparent 25%),
+                radial-gradient(circle at 50% 100%, rgba(120,40,255,0.25), transparent 35%),
+                linear-gradient(135deg, #09090d, #17121e 50%, #09090d);
+        }
+
+        .hero::before {
+            content: "✦   ✧   ✦   ✧   ✦";
+            position: absolute;
+            top: 55px;
+            left: 0;
+            width: 100%;
+
+            color: rgba(255,255,255,0.16);
+            font-size: 28px;
+            letter-spacing: 35px;
+        }
+
+        .hero::after {
+            content: "✦        ✧          ✦";
+            position: absolute;
+            bottom: 65px;
+            left: 0;
+            width: 100%;
+
+            color: rgba(255,180,80,0.18);
+            font-size: 35px;
+            letter-spacing: 45px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            max-width: 850px;
+            padding: 50px 20px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+
+            padding: 8px 16px;
+            margin-bottom: 20px;
+
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 100px;
+
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            margin: 0;
+
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.05;
+            font-weight: 900;
+
+            letter-spacing: -2px;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #ffd36a,
+                #ffffff
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 25px auto 0;
+
+            color: #d4d4dc;
+
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .hero-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            margin-top: 32px;
+            padding: 15px 28px;
+
+            border-radius: 14px;
+
+            background: linear-gradient(135deg, #ff8a00, #ff3d64);
+            color: white;
+
+            text-decoration: none;
+            font-weight: 800;
+
+            box-shadow: 0 10px 30px rgba(255,70,70,0.3);
+
+            transition: 0.25s;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255,70,70,0.4);
+        }
+
+
+        /* =========================================================
+           OFFER BAR
+        ========================================================= */
+
+        .offer {
+            padding: 13px 20px;
+
+            text-align: center;
+
+            color: #fff;
+            background: linear-gradient(90deg, #ff512f, #dd2476);
+
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+        }
+
+
+        /* =========================================================
+           SHOP TOP AREA
+        ========================================================= */
+
+        .shop-header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 45px 20px 10px;
+        }
+
+        .shop-title {
+            margin: 0;
+            font-size: 34px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .shop-subtitle {
+            margin: 8px 0 25px;
+            color: #777;
+            font-size: 15px;
+        }
+
+
+        /* =========================================================
+           SEARCH
+        ========================================================= */
+
+        .search-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .search-wrapper {
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            font-size: 19px;
+            color: #888;
+        }
+
+        #searchBox {
+            width: 100%;
+
+            padding: 17px 20px 17px 50px;
+
+            border: 1px solid #e2e2e8;
+            border-radius: 15px;
+
+            outline: none;
+
+            background: white;
+
+            color: #222;
+            font-size: 15px;
+
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+
+            transition: 0.2s;
+        }
+
+        #searchBox:focus {
+            border-color: #ff6a3d;
+            box-shadow: 0 0 0 4px rgba(255,106,61,0.1);
+        }
+
+
+        /* =========================================================
+           CATEGORY NAV
+        ========================================================= */
+
+        .category-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+
+            display: flex;
+            gap: 9px;
+
+            overflow-x: auto;
+
+            padding: 15px 20px 25px;
+
+            scrollbar-width: none;
+        }
+
+        .category-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-nav button {
+            flex-shrink: 0;
+
+            padding: 10px 17px;
+
+            border: 1px solid #e4e4ea;
+            border-radius: 100px;
+
+            background: white;
+            color: #444;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            transition: 0.2s;
+        }
+
+        .category-nav button:hover,
+        .category-nav button.active {
+            border-color: #ff5c35;
+            background: #ff5c35;
+            color: white;
+
+            box-shadow: 0 5px 15px rgba(255,92,53,0.2);
+        }
+
+
+        /* =========================================================
+           PRODUCTS
+        ========================================================= */
+
+        .products-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .category {
+            position: relative;
+
+            margin: 48px 0 20px;
+
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            font-size: 26px;
+            font-weight: 900;
+
+            letter-spacing: -0.5px;
+        }
+
+        .category::after {
+            content: "";
+
+            height: 2px;
+            flex: 1;
+
+            background: linear-gradient(
+                90deg,
+                #e4e4e8,
+                transparent
+            );
+        }
+
+        .category-group {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fill, minmax(245px, 1fr));
+
+            gap: 20px;
+        }
+
+
+        /* =========================================================
+           PRODUCT CARD
+        ========================================================= */
+
+        .product {
+            position: relative;
+
+            overflow: hidden;
+
+            background: white;
+
+            border: 1px solid #eeeeF2;
+            border-radius: 18px;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.045);
+
+            transition:
+                transform 0.25s,
+                box-shadow 0.25s,
+                border-color 0.25s;
+        }
+
+        .product:hover {
+            transform: translateY(-7px);
+
+            border-color: #e6dfe0;
+
+            box-shadow:
+                0 18px 35px rgba(0,0,0,0.09);
+        }
+
+        .product-image {
+            height: 205px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #ffffff,
+                    #f4f4f7
+                );
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            display: block;
+
+            padding: 10px;
+
+            transition: transform 0.35s;
+        }
+
+        .product:hover .product-image img {
+            transform: scale(1.06);
+        }
+
+        .no-image {
+            font-size: 55px;
+            opacity: 0.35;
+        }
+
+        .product-details {
+            padding: 18px;
+        }
+
+        .product h3 {
+            margin: 0;
+
+            min-height: 48px;
+
+            color: #1b1b20;
+
+            font-size: 16px;
+            line-height: 1.45;
+            font-weight: 800;
+        }
+
+        .pack {
+            margin: 10px 0 0;
+
+            color: #85858d;
+
+            font-size: 13px;
+        }
+
+        .price {
+            margin: 15px 0;
+
+            color: #e6472e;
+
+            font-size: 23px;
+            font-weight: 900;
+        }
+
+
+        /* =========================================================
+           QUANTITY
+        ========================================================= */
+
+        .quantity-box {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 0;
+
+            border: 1px solid #e2e2e7;
+            border-radius: 11px;
+
+            overflow: hidden;
+
+            background: #fafafa;
+        }
+
+        .quantity-box button {
+            width: 38px;
+            height: 38px;
+
+            border: none;
+
+            background: transparent;
+            color: #333;
+
+            font-size: 21px;
+            font-weight: 700;
+
+            transition: 0.2s;
+        }
+
+        .quantity-box button:hover {
+            background: #eeeeF2;
+        }
+
+        .quantity {
+            min-width: 34px;
+
+            text-align: center;
+
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+
+        /* =========================================================
+           ADD CART
+        ========================================================= */
+
+        .add-cart {
+            width: 100%;
+
+            margin-top: 15px;
+            padding: 13px;
+
+            border: none;
+            border-radius: 11px;
+
+            background: linear-gradient(
+                135deg,
+                #17171d,
+                #33333c
+            );
+
+            color: white;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            transition: 0.2s;
+        }
+
+        .add-cart:hover {
+            transform: translateY(-2px);
+
+            background: linear-gradient(
+                135deg,
+                #ff512f,
+                #dd2476
+            );
+
+            box-shadow: 0 8px 20px rgba(255,80,70,0.22);
+        }
+
+
+        /* =========================================================
+           CART BAR
+        ========================================================= */
+
+        .cart-bar {
+            position: fixed;
+            left: 50%;
+            bottom: 16px;
+
+            transform: translateX(-50%);
+
+            z-index: 1500;
+
+            width: min(650px, calc(100% - 25px));
+
+            padding: 15px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+
+            border-radius: 17px;
+
+            background: rgba(20,20,25,0.96);
+            backdrop-filter: blur(15px);
+
+            color: white;
+
+            box-shadow:
+                0 12px 35px rgba(0,0,0,0.25);
+
+            cursor: pointer;
+
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .cart-bar strong {
+            color: #ffd36a;
+        }
+
+        .cart-bar small {
+            margin-left: 8px;
+            color: #aaa;
+            font-weight: 500;
+        }
+
+
+        /* =========================================================
+           POPUP
+        ========================================================= */
+
+        .popup {
+            display: none;
+
+            position: fixed;
+
+            z-index: 3000;
+
+            inset: 0;
+
+            background: rgba(5,5,8,0.7);
+
+            backdrop-filter: blur(7px);
+
+            overflow-y: auto;
+
+            padding: 20px;
+        }
+
+        .popup-content {
+            position: relative;
+
+            width: 100%;
+            max-width: 650px;
+
+            margin: 5vh auto;
+
+            padding: 28px;
+
+            border-radius: 22px;
+
+            background: white;
+
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+
+            animation: popupIn 0.22s ease;
+        }
+
+        @keyframes popupIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .popup-content h2 {
+            margin-top: 0;
+
+            font-size: 25px;
+            font-weight: 900;
+        }
+
+        .close-btn {
+            position: absolute;
+
+            top: 15px;
+            right: 17px;
+
+            width: 38px;
+            height: 38px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: #f1f1f4;
+
+            font-size: 25px;
+
+            color: #555;
+        }
+
+        .close-btn:hover {
+            background: #e6e6eb;
+        }
+
+
+        /* =========================================================
+           CART ITEMS
+        ========================================================= */
+
+        .cart-item {
+            padding: 16px 0;
+
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .cart-item h3 {
+            margin: 0 0 7px;
+
+            font-size: 16px;
+        }
+
+        .cart-item p {
+            color: #666;
+            margin: 5px 0 12px;
+        }
+
+        .remove-btn {
+            padding: 8px 13px;
+
+            border: none;
+            border-radius: 8px;
+
+            background: #f1f1f3;
+            color: #555;
+
+            font-size: 13px;
+        }
+
+        .remove-btn:hover {
+            background: #ffe5e5;
+            color: #d33;
+        }
+
+        .cart-total {
+            margin: 25px 0;
+
+            color: #111;
+
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        .clear-btn {
+            padding: 11px 18px;
+
+            border: none;
+            border-radius: 9px;
+
+            background: #eeeeF1;
+
+            font-weight: 700;
+        }
+
+        .checkout-btn {
+            width: 100%;
+
+            padding: 15px;
+            margin-top: 15px;
+
+            border: none;
+            border-radius: 11px;
+
+            background: linear-gradient(
+                135deg,
+                #ff512f,
+                #dd2476
+            );
+
+            color: white;
+
+            font-size: 16px;
+            font-weight: 800;
+
+            box-shadow: 0 8px 20px rgba(220,60,90,0.2);
+        }
+
+
+        /* =========================================================
+           CHECKOUT FORM
+        ========================================================= */
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #333;
+
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 14px;
+
+            border: 1px solid #dedee4;
+            border-radius: 11px;
+
+            outline: none;
+
+            font-size: 15px;
+
+            transition: 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #ff6347;
+
+            box-shadow:
+                0 0 0 4px rgba(255,99,71,0.1);
+        }
+
+        .form-group textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .checkout-summary {
+            padding: 15px;
+
+            margin: 20px 0;
+
+            border-radius: 12px;
+
+            background: #f7f7f9;
+        }
+
+        .checkout-summary h3 {
+            margin: 0;
+
+            font-size: 20px;
+        }
+
+        .whatsapp-btn {
+            width: 100%;
+
+            padding: 16px;
+
+            border: none;
+            border-radius: 12px;
+
+            background: #25d366;
+
+            color: white;
+
+            font-size: 16px;
+            font-weight: 800;
+
+            box-shadow:
+                0 8px 20px rgba(37,211,102,0.2);
+
+            transition: 0.2s;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20bd5c;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact {
+            position: relative;
+
+            margin-top: 80px;
+            padding: 65px 20px;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center top,
+                    #252532,
+                    #101015 60%
+                );
+
+            color: white;
+        }
+
+        .contact h2 {
+            margin: 0 0 15px;
+
+            font-size: 30px;
+        }
+
+        .contact p {
+            margin: 9px 0;
+
+            color: #bdbdc7;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           EMPTY SEARCH
+        ========================================================= */
+
+        .no-results {
+            display: none;
+
+            padding: 50px 20px;
+
+            text-align: center;
+
+            color: #777;
+        }
+
+        .no-results-icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding-bottom: 85px;
+            }
+
+            header {
+                height: auto;
+                min-height: 65px;
+
+                padding: 10px 15px;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+
+            .logo-icon {
+                width: 34px;
+                height: 34px;
+            }
+
+            nav a {
+                padding: 8px 7px;
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 450px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+                letter-spacing: -1px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .shop-header {
+                padding-top: 35px;
+            }
+
+            .shop-title {
+                font-size: 28px;
+            }
+
+            .products-container {
+                padding: 0 12px;
+            }
+
+            .category-group {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                gap: 12px;
+            }
+
+            .product {
+                border-radius: 14px;
+            }
+
+            .product-image {
+                height: 150px;
+            }
+
+            .product-details {
+                padding: 13px;
+            }
+
+            .product h3 {
+                min-height: 58px;
+                font-size: 14px;
+            }
+
+            .pack {
+                font-size: 12px;
+            }
+
+            .price {
+                font-size: 19px;
+            }
+
+            .quantity-box button {
+                width: 34px;
+                height: 34px;
+            }
+
+            .quantity {
+                min-width: 28px;
+            }
+
+            .add-cart {
+                padding: 11px 5px;
+                font-size: 12px;
+            }
+
+            .category {
+                font-size: 22px;
+            }
+
+            .cart-bar {
+                bottom: 10px;
+                width: calc(100% - 20px);
+                padding: 13px 10px;
+                font-size: 13px;
+            }
+
+            .cart-bar small {
+                display: none;
+            }
+
+            .popup {
+                padding: 10px;
+            }
+
+            .popup-content {
+                margin: 3vh auto;
+                padding: 22px 18px;
+                border-radius: 18px;
+            }
+        }
+
+        @media (max-width: 390px) {
+
+            .category-group {
+                grid-template-columns: 1fr;
+            }
+
+            .product-image {
+                height: 190px;
+            }
+
+            .product h3 {
+                min-height: auto;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🎆
+        </div>
+
+        MAHADEV FIREWORKS
+
+    </div>
+
+
+    <nav>
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#products">
+            Shop
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            ✨ PREMIUM FIREWORKS COLLECTION ✨
+        </div>
+
+
+        <h1>
+            Celebrate With<br>
+            More Sparkle
+        </h1>
+
+
+        <p>
+            Discover our complete collection of crackers
+            and fireworks. Choose your favourites and
+            place your order easily through WhatsApp.
+        </p>
+
+
+        <a
+            href="#products"
+            class="hero-button"
+        >
+            Shop Collection 🛒
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     OFFER
+========================================================= -->
+
+<div class="offer">
+
+    🎉 Special Festival Offers Available
+    &nbsp; • &nbsp;
+    Easy WhatsApp Ordering
+    &nbsp; • &nbsp;
+    Quality Crackers
+
+</div>
+
+
+
+<!-- =========================================================
+     SHOP HEADER
+========================================================= -->
+
+<div class="shop-header">
+
+    <h2 class="shop-title">
+        Our Crackers Collection
+    </h2>
+
+    <p class="shop-subtitle">
+        Browse by category or search for your favourite product.
+    </p>
+
+</div>
+
+
+
+<!-- =========================================================
+     SEARCH
+========================================================= -->
+
+<div class="search-container">
+
+    <div class="search-wrapper">
+
+        <span class="search-icon">
+            🔍
+        </span>
+
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="Search crackers, fountains, shots, sparklers..."
+            onkeyup="searchProducts()"
+        >
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     CATEGORY NAV
+========================================================= -->
+
+<div
+    class="category-nav"
+    id="categoryNav"
+>
+
+    <button
+        class="active"
+        onclick="filterCategory('all', this)"
+    >
+        All Products
+    </button>
+
+</div>
+
+
+
+<!-- =========================================================
+     PRODUCTS
+========================================================= -->
+
+<section id="products">
+
+<div class="products-container">
+
+
+{% set ns = namespace(current_category="") %}
+
+
+{% for product in products %}
+
+
+{% if product.category != ns.current_category %}
+
+
+    {% if ns.current_category != "" %}
+
+        </div>
+
+    {% endif %}
+
+
+    <h2
+        class="category"
+        id="category-{{ product.category|replace(' ', '-') }}"
+    >
+
+        🎆 {{ product.category }}
+
+    </h2>
+
+
+    <div
+        class="products-grid category-group"
+        data-category="{{ product.category }}"
+    >
+
+
+    {% set ns.current_category = product.category %}
+
+
+{% endif %}
+
+
+
+<div
+    class="product"
+    data-name="{{ product.name|lower }}"
+    data-category="{{ product.category }}"
+>
+
+
+    <!-- =====================================================
+         EXISTING IMAGE MAPPING — DO NOT CHANGE
+    ====================================================== -->
+
+    <div class="product-image">
+
+        {% if product.image %}
+
+            <img
+                src="{{ url_for(
+                    'static',
+                    filename='images/' + product.image
+                ) }}"
+                alt="{{ product.name }}"
+                loading="lazy"
+            >
+
+        {% else %}
+
+            <div class="no-image">
+                🎆
+            </div>
+
+        {% endif %}
+
+    </div>
+
+
+
+    <div class="product-details">
+
+
+        <h3>
+            {{ product.name }}
+        </h3>
+
+
+        <p class="pack">
+            📦 {{ product.pack }}
+        </p>
+
+
+        <div class="price">
+            ₹{{ product.price }}
+        </div>
+
+
+
+        <div class="quantity-box">
+
+            <button
+                onclick="decrease(this)"
+                aria-label="Decrease quantity"
+            >
+                −
+            </button>
+
+
+            <span class="quantity">
+                1
+            </span>
+
+
+            <button
+                onclick="increase(this)"
+                aria-label="Increase quantity"
+            >
+                +
+            </button>
+
+        </div>
+
+
+
+        <button
+            class="add-cart"
+            onclick="addToCart('{{ product.name|replace("'", "\\'") }}', {{ product.price }}, this)"
+        >
+            🛒 Add to Cart
+        </button>
+
+
+    </div>
+
+</div>
+
+
+{% endfor %}
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     NO RESULTS
+========================================================= -->
+
+<div
+    class="no-results"
+    id="noResults"
+>
+
+    <div class="no-results-icon">
+        🔍
+    </div>
+
+    <h3>
+        No products found
+    </h3>
+
+    <p>
+        Try searching with another product name.
+    </p>
+
+</div>
+
+
+
+<!-- =========================================================
+     CART BAR
+========================================================= -->
+
+<div
+    class="cart-bar"
+    onclick="openCart()"
+>
+
+    🛒
+
+    <span id="cartCount">
+        0
+    </span>
+
+    items
+
+    &nbsp; | &nbsp;
+
+    Total:
+
+    <strong>
+        ₹<span id="cartTotal">0</span>
+    </strong>
+
+    <small>
+        Click to view cart →
+    </small>
+
+</div>
+
+
+
+<!-- =========================================================
+     CART POPUP
+========================================================= -->
+
+<div
+    id="cartPopup"
+    class="popup"
+>
+
+    <div class="popup-content">
+
+
+        <button
+            class="close-btn"
+            onclick="closeCart()"
+        >
+            ×
+        </button>
+
+
+        <h2>
+            🛒 Your Shopping Cart
+        </h2>
+
+
+        <div id="cartItems"></div>
+
+
+        <div class="cart-total">
+
+            Total:
+
+            ₹<span id="popupTotal">
+                0
+            </span>
+
+        </div>
+
+
+        <button
+            class="clear-btn"
+            onclick="clearCart()"
+        >
+            Clear Cart
+        </button>
+
+
+        <button
+            class="checkout-btn"
+            onclick="openCheckout()"
+        >
+            Proceed to Checkout →
+        </button>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     CHECKOUT
+========================================================= -->
+
+<div
+    id="checkoutPopup"
+    class="popup"
+>
+
+    <div class="popup-content">
+
+
+        <button
+            class="close-btn"
+            onclick="closeCheckout()"
+        >
+            ×
+        </button>
+
+
+        <h2>
+            🧾 Customer Details
+        </h2>
+
+
+        <div class="form-group">
+
+            <label>
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Enter your name"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Mobile Number
+            </label>
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="Enter your mobile number"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Delivery Address
+            </label>
+
+            <textarea
+                id="customerAddress"
+                placeholder="Enter complete delivery address"
+            ></textarea>
+
+        </div>
+
+
+        <div class="checkout-summary">
+
+            <h3>
+
+                Order Total:
+
+                ₹<span id="checkoutTotal">
+                    0
+                </span>
+
+            </h3>
+
+        </div>
+
+
+        <button
+            class="whatsapp-btn"
+            onclick="sendWhatsAppOrder()"
+        >
+            📱 Place Order on WhatsApp
+        </button>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+    class="contact"
+    id="contact"
+>
+
+    <h2>
+        🎆 Mahadev Fireworks
+    </h2>
+
+    <p>
+        Quality crackers for your celebrations.
+    </p>
+
+    <p>
+        📱 WhatsApp: 7730036590
+    </p>
+
+    <p>
+        © 2026 Mahadev Fireworks
+    </p>
+
+</section>
+
+
+
+<script>
+
+/* =========================================================
+   CART
+========================================================= */
+
+let cart = [];
+
+
+
+/* =========================================================
+   CREATE CATEGORY BUTTONS
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        let categories = [];
+
+
+        document
+        .querySelectorAll(".category-group")
+        .forEach(function(group) {
+
+            let category =
+                group.getAttribute("data-category");
+
+
+            if (
+                category &&
+                !categories.includes(category)
+            ) {
+
+                categories.push(category);
+
+            }
+
+        });
+
+
+        let nav =
+            document.getElementById("categoryNav");
+
+
+        categories.forEach(function(category) {
+
+            let button =
+                document.createElement("button");
+
+
+            button.innerText =
+                category;
+
+
+            button.onclick =
+                function() {
+
+                    filterCategory(
+                        category,
+                        this
+                    );
+
+                };
+
+
+            nav.appendChild(button);
+
+        });
+
+    }
+);
+
+
+
+/* =========================================================
+   CATEGORY FILTER
+========================================================= */
+
+function filterCategory(
+    category,
+    clickedButton
+) {
+
+    let products =
+        document.querySelectorAll(".product");
+
+
+    let headings =
+        document.querySelectorAll(".category");
+
+
+    document
+    .querySelectorAll(".category-nav button")
+    .forEach(function(button) {
+
+        button.classList.remove("active");
+
+    });
+
+
+    if (clickedButton) {
+
+        clickedButton.classList.add("active");
+
+    }
+
+
+    if (category === "all") {
+
+        products.forEach(function(product) {
+
+            product.style.display =
+                "";
+
+        });
+
+
+        headings.forEach(function(heading) {
+
+            heading.style.display =
+                "";
+
+        });
+
+
+        return;
+
+    }
+
+
+    products.forEach(function(product) {
+
+        if (
+            product.getAttribute(
+                "data-category"
+            ) === category
+        ) {
+
+            product.style.display =
+                "";
+
+        }
+
+        else {
+
+            product.style.display =
+                "none";
+
+        }
+
+    });
+
+
+    headings.forEach(function(heading) {
+
+        if (
+            heading.innerText.includes(category)
+        ) {
+
+            heading.style.display =
+                "";
+
+        }
+
+        else {
+
+            heading.style.display =
+                "none";
+
+        }
+
+    });
+
+
+    document
+        .getElementById("products")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+function searchProducts() {
+
+    let input =
+        document
+        .getElementById("searchBox")
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    let products =
+        document.querySelectorAll(".product");
+
+
+    let headings =
+        document.querySelectorAll(".category");
+
+
+    let visibleCount = 0;
+
+
+    products.forEach(function(product) {
+
+        let name =
+            product.getAttribute("data-name");
+
+
+        if (
+            name.includes(input)
+        ) {
+
+            product.style.display =
+                "";
+
+            visibleCount++;
+
+        }
+
+        else {
+
+            product.style.display =
+                "none";
+
+        }
+
+    });
+
+
+    if (input === "") {
+
+        headings.forEach(function(heading) {
+
+            heading.style.display =
+                "";
+
+        });
+
+    }
+
+    else {
+
+        headings.forEach(function(heading) {
+
+            let category =
+                heading.innerText
+                .replace("🎆", "")
+                .trim();
+
+
+            let hasProduct = false;
+
+
+            products.forEach(function(product) {
+
+                if (
+                    product.style.display !== "none" &&
+                    product.getAttribute("data-category") === category
+                ) {
+
+                    hasProduct = true;
+
+                }
+
+            });
+
+
+            heading.style.display =
+                hasProduct ? "" : "none";
+
+        });
+
+    }
+
+
+    let noResults =
+        document.getElementById("noResults");
+
+
+    noResults.style.display =
+        visibleCount === 0 ? "block" : "none";
+
+}
+
+
+
+/* =========================================================
+   QUANTITY
+========================================================= */
+
+function increase(button) {
+
+    let quantity =
+        button
+        .parentElement
+        .querySelector(".quantity");
+
+
+    quantity.innerText =
+        parseInt(quantity.innerText) + 1;
+
+}
+
+
+
+function decrease(button) {
+
+    let quantity =
+        button
+        .parentElement
+        .querySelector(".quantity");
+
+
+    let value =
+        parseInt(quantity.innerText);
+
+
+    if (value > 1) {
+
+        quantity.innerText =
+            value - 1;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   ADD TO CART
+========================================================= */
+
+function addToCart(
+    name,
+    price,
+    button
+) {
+
+    let product =
+        button.parentElement;
+
+
+    let quantity =
+        parseInt(
+            product
+            .querySelector(".quantity")
+            .innerText
+        );
+
+
+    let existing =
+        cart.find(
+            item =>
+                item.name === name
+        );
+
+
+    if (existing) {
+
+        existing.quantity +=
+            quantity;
+
+    }
+
+    else {
+
+        cart.push({
+
+            name: name,
+
+            price: price,
+
+            quantity: quantity
+
+        });
+
+    }
+
+
+    updateCart();
+
+
+    /* Visual feedback instead of changing functionality */
+
+    let originalText =
+        button.innerHTML;
+
+
+    button.innerHTML =
+        "✓ Added to Cart";
+
+
+    button.style.background =
+        "#25d366";
+
+
+    setTimeout(function() {
+
+        button.innerHTML =
+            originalText;
+
+        button.style.background =
+            "";
+
+    }, 900);
+
+}
+
+
+
+/* =========================================================
+   UPDATE CART
+========================================================= */
+
+function updateCart() {
+
+    let totalItems = 0;
+
+    let totalPrice = 0;
+
+
+    cart.forEach(function(item) {
+
+        totalItems +=
+            item.quantity;
+
+
+        totalPrice +=
+            item.price *
+            item.quantity;
+
+    });
+
+
+    document
+        .getElementById("cartCount")
+        .innerText =
+        totalItems;
+
+
+    document
+        .getElementById("cartTotal")
+        .innerText =
+        totalPrice;
+
+
+    document
+        .getElementById("popupTotal")
+        .innerText =
+        totalPrice;
+
+
+    document
+        .getElementById("checkoutTotal")
+        .innerText =
+        totalPrice;
+
+}
+
+
+
+/* =========================================================
+   OPEN CART
+========================================================= */
+
+function openCart() {
+
+    displayCart();
+
+
+    document
+        .getElementById("cartPopup")
+        .style.display =
+        "block";
+
+}
+
+
+
+/* =========================================================
+   CLOSE CART
+========================================================= */
+
+function closeCart() {
+
+    document
+        .getElementById("cartPopup")
+        .style.display =
+        "none";
+
+}
+
+
+
+/* =========================================================
+   DISPLAY CART
+========================================================= */
+
+function displayCart() {
+
+    let container =
+        document
+        .getElementById("cartItems");
+
+
+    container.innerHTML = "";
+
+
+    if (cart.length === 0) {
+
+        container.innerHTML = `
+
+            <div style="
+                text-align:center;
+                padding:35px 10px;
+                color:#777;
+            ">
+
+                <div style="
+                    font-size:45px;
+                    margin-bottom:10px;
+                ">
+                    🛒
+                </div>
+
+                <h3>
+                    Your cart is empty
+                </h3>
+
+                <p>
+                    Add some crackers to continue.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    cart.forEach(function(
+        item,
+        index
+    ) {
+
+        let itemTotal =
+            item.price *
+            item.quantity;
+
+
+        container.innerHTML += `
+
+            <div class="cart-item">
+
+                <h3>
+                    ${item.name}
+                </h3>
+
+                <p>
+
+                    ₹${item.price}
+
+                    ×
+
+                    ${item.quantity}
+
+                    =
+
+                    <strong>
+                        ₹${itemTotal}
+                    </strong>
+
+                </p>
+
+
+                <button
+                    class="remove-btn"
+                    onclick="removeItem(${index})"
+                >
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+
+
+/* =========================================================
+   REMOVE
+========================================================= */
+
+function removeItem(index) {
+
+    cart.splice(index, 1);
+
+
+    updateCart();
+
+
+    displayCart();
+
+}
+
+
+
+/* =========================================================
+   CLEAR CART
+========================================================= */
+
+function clearCart() {
+
+    cart = [];
+
+
+    updateCart();
+
+
+    displayCart();
+
+}
+
+
+
+/* =========================================================
+   CHECKOUT
+========================================================= */
+
+function openCheckout() {
+
+    if (cart.length === 0) {
+
+        alert(
+            "Your cart is empty!"
+        );
+
+        return;
+
+    }
+
+
+    closeCart();
+
+
+    document
+        .getElementById("checkoutPopup")
+        .style.display =
+        "block";
+
+}
+
+
+
+/* =========================================================
+   CLOSE CHECKOUT
+========================================================= */
+
+function closeCheckout() {
+
+    document
+        .getElementById("checkoutPopup")
+        .style.display =
+        "none";
+
+}
+
+
+
+/* =========================================================
+   WHATSAPP ORDER
+========================================================= */
+
+function sendWhatsAppOrder() {
+
+    let name =
+        document
+        .getElementById("customerName")
+        .value
+        .trim();
+
+
+    let phone =
+        document
+        .getElementById("customerPhone")
+        .value
+        .trim();
+
+
+    let address =
+        document
+        .getElementById("customerAddress")
+        .value
+        .trim();
+
+
+    if (
+        !name ||
+        !phone ||
+        !address
+    ) {
+
+        alert(
+            "Please fill all customer details."
+        );
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+
+    let message =
+        "🎆 *NEW CRACKER ORDER* 🎆\n\n";
+
+
+    message +=
+        "*Customer:* " +
+        name +
+        "\n";
+
+
+    message +=
+        "*Mobile:* " +
+        phone +
+        "\n";
+
+
+    message +=
+        "*Address:* " +
+        address +
+        "\n\n";
+
+
+    message +=
+        "*ORDER DETAILS*\n\n";
+
+
+    cart.forEach(function(item) {
+
+        let itemTotal =
+            item.price *
+            item.quantity;
+
+
+        total +=
+            itemTotal;
+
+
+        message +=
+            "• " +
+            item.name +
+            "\n";
+
+
+        message +=
+            "Qty: " +
+            item.quantity +
+            " × ₹" +
+            item.price +
+            " = ₹" +
+            itemTotal +
+            "\n\n";
+
+    });
+
+
+    message +=
+        "*TOTAL: ₹" +
+        total +
+        "*";
+
+
+    /* =====================================================
+       CHANGE ONLY THIS NUMBER TO YOUR REAL WHATSAPP NUMBER
+    ====================================================== */
+
+    let whatsappNumber =
+        "917730036590";
+
+
+    let url =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+
+
+/* =========================================================
+   CLOSE POPUPS WHEN CLICKING OUTSIDE
+========================================================= */
+
+window.addEventListener(
+    "click",
+    function(event) {
+
+        let cartPopup =
+            document.getElementById("cartPopup");
+
+
+        let checkoutPopup =
+            document.getElementById("checkoutPopup");
+
+
+        if (event.target === cartPopup) {
+
+            closeCart();
+
+        }
+
+
+        if (event.target === checkoutPopup) {
+
+            closeCheckout();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
